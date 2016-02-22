@@ -1,0 +1,33 @@
+{
+  "name": "node-slack-api",
+  "version": "1.0.0",
+  "description": "Slack methods as they appear in the docs but as a Node API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape tests/*.js | tap-spec",
+    "test-coverage": "istanbul cover tape tests/*.js --recursive --report lcov html -x cli.js | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/newworldcode/node-slack-api.git"
+  },
+  "keywords": [
+    "slack"
+  ],
+  "author": "newworldcode <hello@newworld.codes> (https://newworld.codes)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/newworldcode/node-slack-api/issues"
+  },
+  "homepage": "https://github.com/newworldcode/node-slack-api#readme",
+  "devDependencies": {
+    "eslint": "^2.2.0",
+    "istanbul": "^0.4.2",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.4.0"
+  },
+  "dependencies": {
+    "joi": "^8.0.2",
+    "request": "^2.69.0"
+  }
+}
