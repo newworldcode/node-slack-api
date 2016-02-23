@@ -66,6 +66,7 @@ class Node_Slack {
         // the schema in `lib/api.js`.
         Joi.validate(params, endpoints[method_group][method_name], (err, values) => {
           if (err) {
+            /* istanbul ignore next */
             callback(err)
           }
           else {
