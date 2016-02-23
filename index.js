@@ -13,7 +13,12 @@ class Node_Slack {
    * @return {void}
    */
   constructor(access_token) {
-    this.token = access_token.toString()
+    // Add the token to this instance but
+    // don't make it enumerable.
+    Object.defineProperty(this, "token", {
+      value: access_token.toString(),
+      enumerable: false
+    })
 
     // Get the method groups.
     Object
