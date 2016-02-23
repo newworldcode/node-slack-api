@@ -58,8 +58,8 @@ class Node_Slack {
     this[method_group][method_name] = (params, callback) => {
       // Check the order of the arguments, some endpoints
       // don't take parameters.
-      if (!callback && params instanceof Function) {
-        return utils.call_slack_api(this.token, `${method_group}.${method_name}`, callback)
+      if (!callback || params instanceof Function) {
+        return utils.call_slack_api(this.token, `${method_group}.${method_name}`, params)
       }
       else {
         // Validate the incoming parameters with
