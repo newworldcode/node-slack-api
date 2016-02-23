@@ -91,6 +91,7 @@ class Node_Slack {
       // Check the order of the arguments, some endpoints
       // don't take parameters.
       if (!callback && params instanceof Function) {
+        /* istanbul ignore next : Currently, no Slack endpoint is a sub-method without parameters */
         return utils.call_slack_api(this.token, `${method_group}.${method_name}.${sub_method_name}`, callback)
       }
       else {
@@ -98,6 +99,7 @@ class Node_Slack {
         // the schema in `lib/api.js`.
         Joi.validate(params, endpoints[method_group][method_name][sub_method_name], (err, values) => {
           if (err) {
+            /* istanbul ignore next */
             callback(err)
           }
           else {
